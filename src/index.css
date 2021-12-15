@@ -1,0 +1,128 @@
+.react-datatable__table-wrap {
+  display: block;
+  overflow-x: auto;
+}
+
+.react-datatable__table {
+  border-bottom: 1px solid #111;
+  border-spacing: 0;
+  width: 100%;
+  margin-bottom: 5px;
+}
+
+.react-datatable__table thead tr th {
+  padding: 10px 18px;
+  border-bottom: 1px solid #111;
+  white-space: nowrap;
+}
+
+.react-datatable__table-row--even {
+  background-color: #f9f9f9;
+}
+
+.react-datatable__table-row--even td,
+.react-datatable__table-row td {
+  padding: 8px 10px;
+}
+
+/* Header container */
+.react-datatable__sort-filter {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+/* Table head */
+
+.react-datatable__head-field:hover {
+  cursor: pointer;
+}
+
+.react-datatable__arrow-box {
+  display: inline-flex;
+  flex-direction: column;
+  margin-left: 8px;
+  width: 0px;
+  vertical-align: middle;
+}
+
+.react-datatable__arrow {
+  border: solid black;
+  border-width: 0 2px 2px 0;
+  display: inline-block;
+  padding: 2px;
+}
+
+.react-datatable__arrow-up {
+  transform: rotate(-135deg);
+  -webkit-transform: rotate(-135deg);
+}
+
+.react-datatable__arrow-down {
+  transform: rotate(45deg);
+  -webkit-transform: rotate(45deg);
+}
+
+/* Showing */
+.react-datatable__showing {
+  display: flex;
+  align-items: flex-end;
+  margin-bottom: 10px;
+}
+
+.react-datatable__showing label {
+  margin: 0;
+}
+
+.react-datatable__showing select {
+  margin: 0 3px;
+}
+
+/* SearchBox */
+.react-datatable__search-box label {
+  margin: 0;
+}
+
+/* Paginate */
+.react-datatable__paginate__button {
+  margin-left: 5px;
+  padding: 4px 10px;
+  background-color: transparent;
+  border: 1px solid transparent;
+  border-radius: 2px;
+}
+
+.react-datatable__paginate__button--active,
+.react-datatable__paginate__button:hover:enabled {
+  cursor: pointer;
+  border: 1px solid #979797;
+  background: linear-gradient(to bottom, white 0%, #dcdcdc 100%);
+}
+
+/* Foot */
+.react-datatable__foot {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+/* Desktop screen */
+
+@media (min-width: 640px) {
+  .react-datatable__sort-filter {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-end;
+  }
+
+  .react-datatable__showing {
+    margin-bottom: 0;
+  }
+
+  .react-datatable__foot {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+}
