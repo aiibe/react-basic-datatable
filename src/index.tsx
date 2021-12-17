@@ -1,5 +1,4 @@
-import React from 'react';
-import { useMemo, useState } from 'react';
+import React, { useEffect, useMemo, useState } from 'react';
 import Paginate from './components/Paginate';
 import SearchBox from './components/SearchBox';
 import ShowInfo from './components/ShowInfo';
@@ -11,13 +10,17 @@ import './index.css';
 import { PropType } from './types/DataTable';
 
 export function DataTable({ showingLength, columns, rows }: PropType) {
-  const [showing, setShowing] = useState(showingLength[0]);
+  const [showing, setShowing] = useState(0);
   const [search, setSearch] = useState('');
   const [currentPage, setCurrentPage] = useState(1);
   const [sortByFieldAsc, setSortByFieldAsc] = useState<[string, boolean]>([
     columns[0].field,
     true, // ascending and false is descending
   ]);
+
+  useEffect(() => {
+    setShowing(showingLength[0]);
+  }, [showingLength]);
 
   // Memoize data matched to columns
   const memData = useMemo(() => matchColumnOrder(rows, columns), [
