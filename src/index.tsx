@@ -92,7 +92,7 @@ export function DataTable({ showingLength, columns, rows }: PropType) {
           currentPage={currentPage}
         />
         <Paginate
-          data={data}
+          data={sortData}
           limit={showing}
           setPage={value => setCurrentPage(value)}
           current={currentPage}
