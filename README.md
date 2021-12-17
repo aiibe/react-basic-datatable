@@ -1,6 +1,6 @@
 # React Basic Datatable
 
-A basic version of [Datatables](datatables.net) for React written in Typescript.
+A basic version of [Datatables](https://datatables.net/) for React written in Typescript.
 
 ## Features
 
