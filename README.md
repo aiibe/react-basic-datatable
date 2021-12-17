@@ -49,10 +49,10 @@ const rows = [
 ]
 
 // (Optional) Show entries per page, default is [10, 25, 50, 100]
-const showLength = [5, 10, 15]
+const showingLength = [5, 10, 15]
 
 function App(){
- return <DataTable columns={columns} rows={rows} showLength={showLength}/>
+ return <DataTable columns={columns} rows={rows} showingLength={showingLength}/>
 }
 
 ```
