@@ -1,4 +1,4 @@
-import { ColumnType, DataType } from "../types/DataTable";
+import { ColumnType, DataType } from '../types/DataTable';
 
 export function isEvenNumber(value: number): boolean {
   return value % 2 == 0;
@@ -35,7 +35,11 @@ export function matchColumnOrder(
  * @returns string[] Array data with string
  */
 export function objectToString(data: DataType[]): string[] {
-  return data.map((item) => Object.values(item).join(" ").toLowerCase());
+  return data.map(item =>
+    Object.values(item)
+      .join(' ')
+      .toLowerCase()
+  );
 }
 
 /**
@@ -51,16 +55,17 @@ export function searchList(
   originalData: DataType[]
 ) {
   // Split search text
-  const arrayWords = words.trim().toLowerCase().split(" ");
+  const arrayWords = words
+    .trim()
+    .toLowerCase()
+    .split(' ');
 
   return indexedData.reduce((found: DataType[], item, index) => {
-    const matched = arrayWords.map((word) =>
-      item.indexOf(word) !== -1 ? 1 : 0
-    );
+    const matched = arrayWords.map(word => (item.indexOf(word) !== -1 ? 1 : 0));
 
     // Array contains 1 and only 1 is a match
     // [1,0,1] is not a matched and skipped
-    if (matched.every((val) => val === 1)) {
+    if (matched.every(val => val === 1)) {
       found.push(originalData[index]);
     }
     return found;
